@@ -5,7 +5,8 @@
 
 . .\DSC-Configurations\Domain\DSC01.ps1
 
-( DC01 ).FullName |
+
+( DC01 -ConfigurationData $ConfigData -safemodeAdministratorCred "" -domainCred "").FullName |
 
     Set-Content -Path .\Artifacts.txt
 
