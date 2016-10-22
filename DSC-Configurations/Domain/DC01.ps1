@@ -67,7 +67,8 @@ $ConfigData = @{
         }            
     )             
 }             
-            
+
+<#            
 DC01 -ConfigurationData $ConfigData `
     -safemodeAdministratorCred (Get-Credential -UserName '(Password Only)' `
         -Message "New Domain Safe Mode Administrator Password") `
@@ -78,4 +79,5 @@ DC01 -ConfigurationData $ConfigData `
 Set-DSCLocalConfigurationManager -Path .\DC01 –Verbose            
             
 # Build the domain            
-Start-DscConfiguration -Wait -Force -Path .\DC01 -Verbose            
+Start-DscConfiguration -Wait -Force -Path .\DC01 -Verbose
+#>
